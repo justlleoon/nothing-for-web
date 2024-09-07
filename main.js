@@ -11,11 +11,18 @@ function startCounter(){
 
 function setAddInterval(){
 	counterInterval	= setInterval(addI, 1000);
+  // Makes the player lose on mouse movement
   $(document).mousemove(function(){
   	stopAddI();
   	$("#nothing-counter").text(`You lost and did Nothing for ${i} seconds!`)
   });
+  // Makes the player lose on click
   $(document).click(function(){
+  	stopAddI();
+  	$("#nothing-counter").text(`You lost and did Nothing for ${i} seconds!`)
+  });
+  // Makes the player lose on keypress
+  $(document).keypress(function(){
   	stopAddI();
   	$("#nothing-counter").text(`You lost and did Nothing for ${i} seconds!`)
   });
