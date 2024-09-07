@@ -1,5 +1,6 @@
 let i = 0;
 let phrase = `You have been doing nothing for ${i} seconds.`;
+let counterInterval;
 
 // How you activate it.
 function startCounter(){
@@ -9,11 +10,25 @@ function startCounter(){
 }
 
 function setAddInterval(){
-	setInterval(addI, 1000)
+	counterInterval	= setInterval(addI, 1000);
+  $(document).mousemove(function(){
+  	stopAddI();
+  	$("#nothing-counter").text(`You lost and did Nothing for ${i} seconds!`)
+  });
+  $(document).click(function(){
+  	stopAddI();
+  	$("#nothing-counter").text(`You lost and did Nothing for ${i} seconds!`)
+  });
 }
 
 // Where the magical counter actually works.
 function addI(){
+	// Adds 1 to the variable "i"
 	i++
+  // Changes the text to match with "i"
   document.getElementById('nothing-counter').innerHTML = `You have been doing <span>Nothing</span> for ${i} seconds.`
+}
+
+function stopAddI(){
+	clearInterval(counterInterval);
 }
