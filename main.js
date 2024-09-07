@@ -1,10 +1,11 @@
-let i = 0;
+let i;
 let phrase = `You have been doing nothing for ${i} seconds.`;
 let counterInterval;
 
 // How you activate it.
 function startCounter(){
-	document.getElementById('startButton').style.display = "none";
+  i = 0;
+	$("#startButton").hide();
   document.getElementById('nothing-counter').innerHTML = "Wait and stay <span>steady</span>...";
   setTimeout(setAddInterval, 2000);
 }
@@ -14,17 +15,14 @@ function setAddInterval(){
   // Makes the player lose on mouse movement
   $(document).mousemove(function(){
   	stopAddI();
-  	$("#nothing-counter").text(`You lost and did Nothing for ${i} seconds!`)
   });
   // Makes the player lose on click
   $(document).click(function(){
   	stopAddI();
-  	$("#nothing-counter").text(`You lost and did Nothing for ${i} seconds!`)
   });
   // Makes the player lose on keypress
   $(document).keypress(function(){
   	stopAddI();
-  	$("#nothing-counter").text(`You lost and did Nothing for ${i} seconds!`)
   });
 }
 
@@ -38,4 +36,7 @@ function addI(){
 
 function stopAddI(){
 	clearInterval(counterInterval);
+  $("#nothing-counter").text(`You lost and did Nothing for ${i} seconds!`);
+  $("#startButton").text("Try again?");
+  $("#startButton").show();
 }
