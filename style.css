@@ -1,7 +1,18 @@
 body{
-    background-color: darkgray;
+    background-color: gray;
     font-family: Arial, sans-serif;
-    color: gray;
+    color: darkgray;
+    text-align: center;
+}
+
+
+div{
+    height: 100%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);  
 }
 
 span{
