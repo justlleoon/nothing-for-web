@@ -4,7 +4,7 @@ let counterInterval;
 // How you activate it.
 function startCounter(){
   i = 0;
-	document.getElementsByTagName("button").style.display = "none";
+  $("#startButton").hide()
   document.getElementById('nothing-counter').innerHTML = "Wait and stay <span>steady</span>...";
   setTimeout(setAddInterval, 2000);
 }
