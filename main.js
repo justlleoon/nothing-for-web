@@ -33,6 +33,7 @@ function addI(){
   document.getElementById('nothing-counter').innerHTML = `You have been doing <span>Nothing</span> for ${i} seconds.`
 }
 
+// A function where if you lose it stops counting "i". 
 function stopAddI(){
 	clearInterval(counterInterval);
   $("#nothing-counter").text(`You lost and did Nothing for ${i} seconds! Refresh the page to play again.`);
