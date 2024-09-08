@@ -1,11 +1,10 @@
 let i;
-let phrase = `You have been doing nothing for ${i} seconds.`;
 let counterInterval;
 
 // How you activate it.
 function startCounter(){
   i = 0;
-	$("#startButton").hide();
+	document.getElementsByTagName("button").style.display = "none";
   document.getElementById('nothing-counter').innerHTML = "Wait and stay <span>steady</span>...";
   setTimeout(setAddInterval, 2000);
 }
@@ -36,7 +35,5 @@ function addI(){
 
 function stopAddI(){
 	clearInterval(counterInterval);
-  $("#nothing-counter").text(`You lost and did Nothing for ${i} seconds!`);
-  $("#startButton").text("Try again?");
-  $("#startButton").show();
+  $("#nothing-counter").text(`You lost and did Nothing for ${i} seconds! Refresh the page to play again.`);
 }
