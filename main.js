@@ -30,7 +30,7 @@ function addI(){
 	// Adds 1 to the variable "i"
 	i++
   // Changes the text to match with "i"
-  document.getElementById('#nothing-counter').innerHTML = `You have been doing <span>Nothing</span> for ${i} seconds.`
+  document.getElementById('nothing-counter').innerHTML = `You have been doing <span>Nothing</span> for ${i} seconds.`
 }
 
 // A function where if you lose it stops counting "i". 
